@@ -12,5 +12,14 @@ Before starting this exercise, please create an account in Benchling: https://be
    - Look at the chromatograms
    - Look at mismatches
    - Trim off low-quality ends
+
+<examples>
+   
+   ![](./figures/Screenshot_1_2026-06-24_14-22-33.png)
+   
+   ![](./figures/Screenshot_2_2026-06-24_14-22-43.png)
+   
+   ![](./figures/Screenshot_3_2026-06-24_14-22-52.png)
+   
+</examples>
 </br>
-![image](https://github.com/anoukwillemsen/practical_course_microbial_ecology/blob/main/figures/Screenshot_2_2026-06-24_14-22-43.png)
