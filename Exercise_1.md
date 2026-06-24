@@ -34,3 +34,12 @@ In this exercise, we will create a consensus sequence from multiple Sanger seque
 
 1. First, inspect your consensus sequence (FASTA file) in a text editor
 2. Perform blast-based searches using reference databases. You can do this online: https://blast.ncbi.nlm.nih.gov/Blast.cgi
+
+<details>
+
+<summary>This is an example fasta file </summary>
+
+![](./figures/Screenshot_4_2026-06-24_15-17-58.png)
+
+</details>
+</br>
