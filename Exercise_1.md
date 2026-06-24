@@ -48,3 +48,7 @@ In this exercise, we will create a consensus sequence from multiple Sanger seque
 
 </details>
 </br>
+
+## Find out the organism through phylogenetic analysis
+
+
