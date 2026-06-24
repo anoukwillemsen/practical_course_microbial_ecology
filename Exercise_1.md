@@ -13,4 +13,4 @@ Before starting this exercise, please create an account in Benchling: https://be
    - Look at mismatches
    - Trim off low-quality ends
 </br>
-![image](figures/figures/Screenshot_2_2026-06-24_14-22-43.png)
+![image](https://github.com/anoukwillemsen/practical_course_microbial_ecology/blob/main/figures/Screenshot_2_2026-06-24_14-22-43.png)
