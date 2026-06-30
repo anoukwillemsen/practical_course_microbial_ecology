@@ -133,7 +133,7 @@ Copy the necessary files into your `<USER>/18S_analysis/data` directory
 scp DNA_consensus.fasta <USER>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/data;
 
 # Copy the provided alignment
-scp ../../../provided_data/selected_phylum_Discosea_REFsAcanthamoeba_genafpairAln_manCur.fasta
+scp ../../../provided_data/selected_phylum_Discosea_REFsAcanthamoeba_genafpairAln_manCur.fasta .;
 ```
 </details>
 
