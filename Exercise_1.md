@@ -30,13 +30,13 @@ In this exercise, we will create a consensus sequence from multiple Sanger seque
 </details>
 </br>
 
-## Find out the organism through blast
+## Find out the organism through BLAST
 
 1. First, inspect your consensus sequence (FASTA file) in a text editor
 2. Perform blast-based searches using reference databases. You can do this online: https://blast.ncbi.nlm.nih.gov/Blast.cgi
 
 **Questions**:</br>
-`Which type of blast did you use, and why?`</br>
+`Which type of BLAST did you use, and why?`</br>
 `What are the criteria of a good blast hit?`</br>
 `Which organism gave the best hit?`</br>
 
@@ -72,23 +72,19 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
 Then it will ask for your password (the one you set up which is connected to your `<user>`). Type it in and don't worry that you cant see whats being written, thats normal for passwords in the terminal.
 Hit ENTER and here we go! You are now logged in to the LiSC server!
-
+<br/>
 
 ### Implement the project structure
 In our course directory (`/lisc/data/scratch/course/2026s301485/`), create the folder `<USER>` (replace `<USER>` with your username) and go into it.
 
 <details>
-
-<summary>See commands</summary>
-
-```bash
-cd /lisc/data/scratch/course/2026s301485/;
-mkdir <USER>;
-cd  <USER>;
-```
-
+   <summary>See commands</summary>
+   ```bash
+   cd /lisc/data/scratch/course/2026s301485/;
+   mkdir <USER>;
+      cd  <USER>;
+   ```
 </details>
-
 
 Once in that directory, we will create the directory structure, so we can work in a nice environment 😉.
 ```bash
@@ -136,6 +132,8 @@ scp DNA_consensus.fasta <USER>@login01.lisc.univie.ac.at:/lisc/data/scratch/cour
 scp ../../provided_data/selected_phylum_Discosea_REFsAcanthamoeba_genafpairAln_manCur.fasta data/;
 ```
 </details>
+
+<br/>
 
 ### Inspect data files
 
@@ -187,13 +185,19 @@ grep -c ">" ../data/*.fasta;
 ```bash
 cd tmp;
 ```
+
 Since most files we will generate are temporary, it makes more sense to work inside this directory and only write final processed files in  `/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tmp`.
+
+<br/>
 
 ### Add your sequence to an existing alignment
 
-Wait! Let's first load **[MAFFT](https://mafft.cbrc.jp/alignment/software/)**!
+ We know from our BLAST analysis that our organism is most likely a member of the family *Anthamoeba* within the phylum *Discosea*. Since we have only a partial 18S rRNA sequence, we will add our DNA fragment to an existing alignment of *Discosea* from the supplementary data of Willemsen *et al.*, 2025. doi: [10.1093/gbe/evae271](https://doi.org/10.1093/gbe/evae271).
+
+Let's first load our alignment software. We will align our DNA sequence with **[MAFFT](https://mafft.cbrc.jp/alignment/software/)**.
 ```bash
 module load MAFFT;
 ```
 
+<br/>
 
