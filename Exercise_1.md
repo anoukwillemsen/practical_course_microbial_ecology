@@ -129,7 +129,7 @@ Copy the necessary files into your `<USER>/18S_analysis/data` directory
 scp DNA_consensus.fasta <USER>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/data/;
 
 # Copy the provided alignment
-scp ../../provided_data/selected_phylum_Discosea_REFsAcanthamoeba_genafpairAln_manCur.fasta data/;
+scp ../../provided_data/selected_Discosea_genafpairAln_manCur.fasta data/;
 ```
 </details>
 
@@ -162,7 +162,7 @@ less data/DNA_consensus.fasta;
 
 
 ```bash
-less data/selected_phylum_Discosea_REFsAcanthamoeba_genafpairAln_manCur.fasta;
+less data/selected_Discosea_genafpairAln_manCur.fasta;
 ```
 
 <details>
@@ -194,10 +194,13 @@ Since most files we will generate are temporary, it makes more sense to work ins
 
  We know from our BLAST analysis that our organism is most likely a member of the family *Anthamoeba* within the phylum *Discosea*. Since we have only a partial 18S rRNA sequence, we will add our DNA fragment to an existing alignment of *Discosea* from the supplementary data of Willemsen *et al.*, 2025. doi: [10.1093/gbe/evae271](https://doi.org/10.1093/gbe/evae271).
 
-Let's first load our alignment software. We will align our DNA sequence with **[MAFFT](https://mafft.cbrc.jp/alignment/software/)**.
+Let's first load our alignment software. We will align our DNA sequence with [MAFFT](https://mafft.cbrc.jp/alignment/software/).
 ```bash
 module load MAFFT;
 ```
-
+Now add our DNA sequence to the existing alignment
+```bash
+mafft --auto --addfragments ../data/DNA_consensus.fasta --thread 2 ../data/selected_Discosea_genafpairAln_manCur.fasta > selected_Discosea_genafpairAln_manCur_addFrag.fasta;
+```
 <br/>
 
