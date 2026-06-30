@@ -176,9 +176,24 @@ less data/selected_phylum_Discosea_REFsAcanthamoeba_genafpairAln_manCur.fasta;
 </details>
 <br/>
 
+Count the number of sequences in each fasta file
+```bash
+grep -c ">" ../data/*.fasta;
+```
+<br/>
+
 ### Change to temporary directory
 
 ```bash
 cd tmp;
 ```
 Since most files we will generate are temporary, it makes more sense to work inside this directory and only write final processed files in  `/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tmp`.
+
+### Add your sequence to an existing alignment
+
+Wait! Let's first load **[MAFFT](https://mafft.cbrc.jp/alignment/software/)**!
+```bash
+module load MAFFT;
+```
+
+
