@@ -217,6 +217,25 @@ But then we need to copy over the files to our local machine:
 scp <user>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tmp/selected_Discosea_genafpairAln_manCur_addFrag.fasta .;
 ```
 Have a look at the alignment!
+<br/>
 
+### Phylogenetic tree calculation
+
+Tree calculation requires substantial computational power and addresses a complex bioinformatics problem. We are using `iqtree2`. Learn about what happens behind the scenes here:
+
+https://iqtree.github.io/doc/Tutorial
+
+These are the commands we will be running, which take ~XX min. So grab a coffee :). 
+
+```
+module load IQ-TREE;
+
+iqtree2 -s selected_Discosea_genafpairAln_manCur_addFrag.fasta \
+-seed 145693 \
+-b 1000 \
+-v \
+-nt 4 \
+--prefix selected_Discosea_genafpairAln_manCur_addFrag_tree;
+```
 <br/>
 
