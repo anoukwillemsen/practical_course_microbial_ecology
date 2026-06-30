@@ -137,7 +137,7 @@ scp ../../provided_data/selected_phylum_Discosea_REFsAcanthamoeba_genafpairAln_m
 ```
 </details>
 
-## Inspect data files
+### Inspect data files
 
 ```bash
 less data/DNA_consensus.fasta;
@@ -159,9 +159,6 @@ less data/DNA_consensus.fasta;
 ```bash
 less data/selected_phylum_Discosea_REFsAcanthamoeba_genafpairAln_manCur.fasta;
 ```
-- Click <kbd>↑</kbd> and <kbd>↓</kbd> to navigate through the file visualisation.
-
-- Click <kbd>Q</kbd> to exit the viewing.
 
 <details>
 
