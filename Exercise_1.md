@@ -73,3 +73,63 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 Then it will ask for your password (the one you set up which is connected to your `<user>`). Type it in and don't worry that you cant see whats being written, thats normal for passwords in the terminal.
 Hit ENTER and here we go! You are now logged in to the LiSC server!
 
+
+### Implement the project structure
+In our course directory (`/lisc/data/scratch/course/2026s301485/`), create the folder `<USER>` (replace `<USER>` with your username) and go into it.
+
+<details>
+
+<summary>See commands</summary>
+
+```bash
+cd /lisc/data/scratch/course/2026s301485/;
+mkdir <USER>;
+cd  <USER>;
+```
+
+</details>
+
+
+Once in that directory, we will create the directory structure, so we can work in a nice environment 😉.
+```bash
+<USER>
+└── 18S_analysis
+    ├── data            # store original downlaoded 'raw' data
+    ├── processed_data # store processed input sequence and metadata files
+    ├── scripts         # store all scripts
+    ├── tmp             # store all intermediate files (those which do not get used by downstream software)
+    └── tree            # store tree-related files
+```
+
+<details>
+
+<summary>See commands</summary>
+
+```bash
+# Make <USER>/18S_analysis directory and change to it
+mkdir 18S_analysis;
+cd 18S_analysis;
+
+# Make directories inside of ~/2026s301485/18S_analysis
+mkdir data;
+mkdir processed_data;
+mkdir scripts;
+mkdir tmp;
+mkdir tree;
+
+# Visualise your directory structure
+tree .;
+```
+</details>
+
+Copy the DNA consensus file into your `<USER>/18S_analysis/data` directory
+
+<details>
+
+<summary>See commands</summary>
+
+```bash
+scp DNA_consensus.fasta <USER>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/data;
+```
+</details>
+
