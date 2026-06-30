@@ -122,14 +122,18 @@ tree .;
 ```
 </details>
 
-Copy the DNA consensus file into your `<USER>/18S_analysis/data` directory
+Copy the necessary files into your `<USER>/18S_analysis/data` directory
 
 <details>
 
 <summary>See commands</summary>
 
 ```bash
+# Copy the DNA consensus file you made
 scp DNA_consensus.fasta <USER>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/data;
+
+# Copy the provided alignment
+scp ../../../provided_data/selected_phylum_Discosea_REFsAcanthamoeba_genafpairAln_manCur.fasta
 ```
 </details>
 
