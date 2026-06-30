@@ -139,6 +139,13 @@ scp ../../provided_data/selected_phylum_Discosea_REFsAcanthamoeba_genafpairAln_m
 
 ### Inspect data files
 
+Make sure we are inside our working directory
+
+```bash
+pwd;
+```
+Output should show `/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/`.
+
 ```bash
 less data/DNA_consensus.fasta;
 ```
@@ -168,3 +175,10 @@ less data/selected_phylum_Discosea_REFsAcanthamoeba_genafpairAln_manCur.fasta;
 
 </details>
 <br/>
+
+### Change to temporary directory
+
+```bash
+cd tmp;
+```
+Since most files we will generate are temporary, it makes more sense to work inside this directory and only write final processed files in  `/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tmp`.
