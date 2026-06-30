@@ -51,4 +51,25 @@ In this exercise, we will create a consensus sequence from multiple Sanger seque
 
 ## Find out the organism through phylogenetic analysis
 
+The rest of the analyses will happen on LiSC. Here is a quick starter guide in case you haven't read it:
+
+[LiSC Starter Guide](https://wiki.lisc.univie.ac.at/access/gettingstarted/tutorial)
+
+Read that and continue here.
+
+**SSH Login**
+
+To login to LiSC, open a terminal (for example [`tabby`](https://tabby.sh/)) and run the following command, where `<user>` is your personal user login:
+```bash
+ssh <user>@login01.lisc.univie.ac.at
+```
+This will (if it is your first login) prompt the following output:
+```bash
+The authenticity of host 'login01.lisc.univie.ac.at (131.130.65.101)' can't be established.
+ED25519 key fingerprint is SHA256:TktqgkGsuDaxZ1df2g9w2P12jm3s6d7ayFw0NZ4NzlQ.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? 
+```
+Then it will ask for your password (the one you set up which is connected to your `<user>`). Type it in and don't worry that you cant see whats being written, thats normal for passwords in the terminal.
+Hit ENTER and here we go! You are now logged in to the LiSC server!
 
