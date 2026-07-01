@@ -56,6 +56,8 @@ The rest of the analyses will happen on LiSC. Here is a quick starter guide in c
 [LiSC Starter Guide](https://wiki.lisc.univie.ac.at/access/gettingstarted/tutorial)
 
 Read that and continue here.
+</br>
+</br>
 
 **SSH Login**
 
@@ -72,13 +74,14 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
 Then it will ask for your password (the one you set up and that is connected to your `<USER>`). Type it in and don't worry that you can't see what's being written; that's normal for passwords in the terminal.
 Hit ENTER, and here we go! You are now logged in to the LiSC server!
-<br/>
+</br>
+</br>
 
 ### Implement the project structure
+
 In our course directory (`/lisc/data/scratch/course/2026s301485/`), create the folder `<USER>` (replace `<USER>` with your username) and go into it.
 
-<details>
-   
+<details>  
 <summary>See commands</summary>
 
 ```bash
@@ -87,8 +90,7 @@ cd /lisc/data/scratch/course/2026s301485/
 ```bash
 mkdir <USER>
 cd  <USER>
-```
-   
+```   
 </details>
 
 Once in that directory, we will create the directory structure so we can work in a nice environment 😉.
@@ -103,22 +105,25 @@ Once in that directory, we will create the directory structure so we can work in
 ```
 
 <details>
-
 <summary>See commands</summary>
 
 ```bash
 # Make <USER>/18S_analysis directory and change to it
 mkdir 18S_analysis
 cd 18S_analysis
+```
 
 # Make directories inside of ~/2026s301485/18S_analysis
+```bash
 mkdir data
 mkdir processed_data
 mkdir scripts
 mkdir tmp
 mkdir tree
+```
 
 # Visualise your directory structure
+```bash
 tree .
 ```
 </details>
@@ -126,19 +131,19 @@ tree .
 Copy the necessary files into your `<USER>/18S_analysis/data` directory
 
 <details>
-
 <summary>See commands</summary>
 
 ```bash
 # Copy the DNA consensus file you made
 scp DNA_consensus.fasta <USER>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/data/;
-
+```
 # Copy the provided alignment
+```bash
 scp ../../provided_data/selected_Discosea_genafpairAln_manCur.fasta data/;
 ```
 </details>
 
-<br/>
+</br>
 
 ### Inspect data files
 
@@ -163,7 +168,7 @@ less data/DNA_consensus.fasta;
 ![](./figures/Screenshot_5_2026-06-30_14-46-03.png)
 
 </details>
-<br/>
+</br>
 
 
 ```bash
@@ -177,22 +182,22 @@ less data/selected_Discosea_genafpairAln_manCur.fasta
 ![](./figures/Screenshot_6_2026-06-30_14-46-20.png)
 
 </details>
-<br/>
+</br>
 
 Count the number of sequences in each fasta file
 ```bash
 grep -c ">" ../data/*.fasta
 ```
-<br/>
+</br>
 
-### Change to tree directory
-```bash
-cd tree
-```
-<br/>
 
 ### Add your sequence to an existing alignment
 We know from our BLAST analysis that our organism is most likely a member of the family *Anthamoeba* within the phylum *Discosea*. Since we have only a partial 18S rRNA sequence, we will add our DNA fragment to an existing alignment of *Discosea* from the supplementary data of Willemsen *et al.*(2025). doi: [10.1093/gbe/evae271](https://doi.org/10.1093/gbe/evae271). We will align our DNA sequence using [MAFFT](https://mafft.cbrc.jp/alignment/software/).
+
+**Change to the tree directory**
+```bash
+cd tree
+```
 
 **Let's first load our alignment software**.
 ```bash
@@ -202,7 +207,7 @@ module load MAFFT
 ```bash
 mafft --auto --addfragments ../data/DNA_consensus.fasta --thread 2 ../data/selected_Discosea_genafpairAln_manCur.fasta > selected_Discosea_genafpairAln_manCur_addFrag.fasta
 ```
-<br/>
+</br>
 
 **View alignment**
 Let's take a look at our alignment using [Aliview](https://github.com/AliView/AliView), a lightweight alignment viewer/editor.
@@ -217,25 +222,26 @@ But then we need to copy over the files to our local machine:
 scp <user>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tmp/selected_Discosea_genafpairAln_manCur_addFrag.fasta .
 ```
 Have a look at the alignment!
-<br/>
+</br>
 
 ### Phylogenetic tree calculation
 
-Tree calculation requires substantial computational power and addresses a complex bioinformatics problem. We are using `iqtree2`. Learn about what happens behind the scenes here:
+Tree calculation requires substantial computational power and addresses a complex bioinformatics problem. We are using `iqtree3`. Learn about what happens behind the scenes here:
 
 https://iqtree.github.io/doc/Tutorial
 
 These are the commands we will be running, which take ~XX min. So grab a coffee :). 
 
-```
+```bash
 module load IQ-TREE
-
-iqtree2 -s selected_Discosea_genafpairAln_manCur_addFrag.fasta \
+```
+```bash
+iqtree3 -s selected_Discosea_genafpairAln_manCur_addFrag.fasta \
 -seed 145693 \
 -b 1000 \
 -v \
--nt 4 \
+-T 2 \
 --prefix selected_Discosea_genafpairAln_manCur_addFrag_tree
 ```
-<br/>
+</br>
 
