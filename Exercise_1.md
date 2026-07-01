@@ -59,7 +59,7 @@ Read that and continue here.
 
 **SSH Login**
 
-To login to LiSC, open a terminal (for example [`tabby`](https://tabby.sh/)) and run the following command, where `<user>` is your personal user login:
+To log in to LiSC, open a terminal (for example [`tabby`](https://tabby.sh/)) and run the following command, where `<user>` is your personal user login:
 ```bash
 ssh <user>@login01.lisc.univie.ac.at
 ```
@@ -70,27 +70,32 @@ ED25519 key fingerprint is SHA256:TktqgkGsuDaxZ1df2g9w2P12jm3s6d7ayFw0NZ4NzlQ.
 This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])? 
 ```
-Then it will ask for your password (the one you set up which is connected to your `<user>`). Type it in and don't worry that you cant see whats being written, thats normal for passwords in the terminal.
-Hit ENTER and here we go! You are now logged in to the LiSC server!
+Then it will ask for your password (the one you set up and that is connected to your `<USER>`). Type it in and don't worry that you can't see what's being written; that's normal for passwords in the terminal.
+Hit ENTER, and here we go! You are now logged in to the LiSC server!
 <br/>
 
 ### Implement the project structure
 In our course directory (`/lisc/data/scratch/course/2026s301485/`), create the folder `<USER>` (replace `<USER>` with your username) and go into it.
 
 <details>
-   <summary>See commands</summary>
-   ```bash
-   cd /lisc/data/scratch/course/2026s301485/;
-   mkdir <USER>;
-      cd  <USER>;
-   ```
+   
+<summary>See commands</summary>
+
+```bash
+cd /lisc/data/scratch/course/2026s301485/
+```
+```bash
+mkdir <USER>
+cd  <USER>
+```
+   
 </details>
 
-Once in that directory, we will create the directory structure, so we can work in a nice environment 😉.
+Once in that directory, we will create the directory structure so we can work in a nice environment 😉.
 ```bash
 <USER>
 └── 18S_analysis
-    ├── data            # store original downlaoded 'raw' data
+    ├── data            # store original downloaded 'raw' data
     ├── processed_data # store processed input sequence and metadata files
     ├── scripts         # store all scripts
     ├── tmp             # store all intermediate files (those which do not get used by downstream software)
@@ -103,18 +108,18 @@ Once in that directory, we will create the directory structure, so we can work i
 
 ```bash
 # Make <USER>/18S_analysis directory and change to it
-mkdir 18S_analysis;
-cd 18S_analysis;
+mkdir 18S_analysis
+cd 18S_analysis
 
 # Make directories inside of ~/2026s301485/18S_analysis
-mkdir data;
-mkdir processed_data;
-mkdir scripts;
-mkdir tmp;
-mkdir tree;
+mkdir data
+mkdir processed_data
+mkdir scripts
+mkdir tmp
+mkdir tree
 
 # Visualise your directory structure
-tree .;
+tree .
 ```
 </details>
 
@@ -140,7 +145,7 @@ scp ../../provided_data/selected_Discosea_genafpairAln_manCur.fasta data/;
 Make sure we are inside our working directory
 
 ```bash
-pwd;
+pwd
 ```
 Output should show `/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/`.
 
@@ -162,7 +167,7 @@ less data/DNA_consensus.fasta;
 
 
 ```bash
-less data/selected_Discosea_genafpairAln_manCur.fasta;
+less data/selected_Discosea_genafpairAln_manCur.fasta
 ```
 
 <details>
@@ -176,31 +181,26 @@ less data/selected_Discosea_genafpairAln_manCur.fasta;
 
 Count the number of sequences in each fasta file
 ```bash
-grep -c ">" ../data/*.fasta;
+grep -c ">" ../data/*.fasta
 ```
 <br/>
 
-### Change to temporary directory
-
+### Change to tree directory
 ```bash
-cd tmp;
+cd tree
 ```
-
-Since most files we will generate are temporary, it makes more sense to work inside this directory and only write final processed files in  `/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tmp`.
-
 <br/>
 
 ### Add your sequence to an existing alignment
-
-We know from our BLAST analysis that our organism is most likely a member of the family *Anthamoeba* within the phylum *Discosea*. Since we have only a partial 18S rRNA sequence, we will add our DNA fragment to an existing alignment of *Discosea* from the supplementary data of Willemsen *et al.*, 2025. doi: [10.1093/gbe/evae271](https://doi.org/10.1093/gbe/evae271). We will align our DNA sequence using [MAFFT](https://mafft.cbrc.jp/alignment/software/).
+We know from our BLAST analysis that our organism is most likely a member of the family *Anthamoeba* within the phylum *Discosea*. Since we have only a partial 18S rRNA sequence, we will add our DNA fragment to an existing alignment of *Discosea* from the supplementary data of Willemsen *et al.*(2025). doi: [10.1093/gbe/evae271](https://doi.org/10.1093/gbe/evae271). We will align our DNA sequence using [MAFFT](https://mafft.cbrc.jp/alignment/software/).
 
 **Let's first load our alignment software**.
 ```bash
-module load MAFFT;
+module load MAFFT
 ```
 **Now add our DNA sequence to the existing alignment**
 ```bash
-mafft --auto --addfragments ../data/DNA_consensus.fasta --thread 2 ../data/selected_Discosea_genafpairAln_manCur.fasta > selected_Discosea_genafpairAln_manCur_addFrag.fasta;
+mafft --auto --addfragments ../data/DNA_consensus.fasta --thread 2 ../data/selected_Discosea_genafpairAln_manCur.fasta > selected_Discosea_genafpairAln_manCur_addFrag.fasta
 ```
 <br/>
 
@@ -214,7 +214,7 @@ Here are the download links for three different operating systems.
 
 But then we need to copy over the files to our local machine:
 ```bash
-scp <user>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tmp/selected_Discosea_genafpairAln_manCur_addFrag.fasta .;
+scp <user>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tmp/selected_Discosea_genafpairAln_manCur_addFrag.fasta .
 ```
 Have a look at the alignment!
 <br/>
@@ -228,14 +228,14 @@ https://iqtree.github.io/doc/Tutorial
 These are the commands we will be running, which take ~XX min. So grab a coffee :). 
 
 ```
-module load IQ-TREE;
+module load IQ-TREE
 
 iqtree2 -s selected_Discosea_genafpairAln_manCur_addFrag.fasta \
 -seed 145693 \
 -b 1000 \
 -v \
 -nt 4 \
---prefix selected_Discosea_genafpairAln_manCur_addFrag_tree;
+--prefix selected_Discosea_genafpairAln_manCur_addFrag_tree
 ```
 <br/>
 
