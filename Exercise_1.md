@@ -230,7 +230,7 @@ Tree calculation requires substantial computational power and addresses a comple
 
 https://iqtree.github.io/doc/Tutorial
 
-These are the commands we will be running, which take ~XX min. So grab a coffee :). 
+These are the commands we will be running, which take ~10 min. So grab a coffee :). 
 
 ```bash
 module load IQ-TREE
