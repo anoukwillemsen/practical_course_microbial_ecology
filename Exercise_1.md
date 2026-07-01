@@ -238,7 +238,7 @@ module load IQ-TREE
 ```bash
 iqtree3 -s selected_Discosea_genafpairAln_manCur_addFrag.fasta \
 -seed 145693 \
--b 1000 \
+-B 1000 \
 -v \
 -T 2 \
 --prefix selected_Discosea_genafpairAln_manCur_addFrag_tree
