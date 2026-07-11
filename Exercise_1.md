@@ -172,7 +172,7 @@ less data/DNA_consensus.fasta;
 
 
 ```bash
-less data/selected_Discosea_genafpairAln_manCur.fasta
+less data/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln.fasta
 ```
 
 <details>
@@ -205,7 +205,7 @@ module load MAFFT
 ```
 Now add our DNA sequence to the existing alignment
 ```bash
-mafft --auto --addfragments ../data/DNA_consensus.fasta --thread 2 ../data/selected_Discosea_genafpairAln_manCur.fasta > selected_Discosea_genafpairAln_manCur_addFrag.fasta
+mafft --auto --addfragments ../data/DNA_consensus_18S.fasta --thread 2 ../data/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln.fasta > selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag.fasta
 ```
 </br>
 
