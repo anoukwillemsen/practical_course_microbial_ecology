@@ -243,5 +243,41 @@ iqtree3 -s selected_Discosea_genafpairAln_manCur_addFrag.fasta \
 -T 2 \
 --prefix selected_Discosea_genafpairAln_manCur_addFrag_tree
 ```
+
+Here's the breakdown of the command:
+
+| Parameter | Description |
+|-----------|-------------|
+| `-s alignment.fasta` | PHYLIP/FASTA/NEXUS/CLUSTAL/MSF alignment file(s). |
+| `-seed NUM` | Random seed number, normally used for debugging purposes. |
+| `-B 1000` | Performs **1,000 ultrafast bootstrap replicates** to assess branch support quickly and accurately. |
+| `-v` | Verbose mode, printing more messages to screen. |
+| `-T 2` | Uses **2 threads** for parallel computation. |
+| `--prefix *_tree` | Sets the output file prefix. |
+
 </br>
 
+
+### Tree visualisation
+
+For this, we will use a web tool: [**iTOL**](https://itol.embl.de/) 
+
+Log in (top right) with the user **"veelab_students"**. The password is shared in the class.  
+<p align="left">
+  <img src="./figures/login.png" width="200">
+</p>
+
+Then go create your own workspace.  
+<p align="left">
+  <img src="./figures/new_workspace.png" width="200">
+</p>
+
+Then try to do these steps, but also feel free to just play around:
+- **upload** your tree files (literally `<something>.treefile`), which are saved in Newick format.
+- Have a look at the tree **layouts**
+- Have a look at midpoint **rooting**
+- Have a look at bootstrap **support** values
+- Where does your sequence cluster?
+- Can you say with certainty what host species/strain you have?
+
+<br>
