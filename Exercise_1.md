@@ -219,7 +219,7 @@ Here are the download links for three different operating systems.
 
 But then we need to copy over the files to our local machine:
 ```bash
-scp <user>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tmp/selected_Discosea_genafpairAln_manCur_addFrag.fasta .
+scp <user>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tree/selected_Discosea_genafpairAln_manCur_addFrag.fasta .
 ```
 Have a look at the alignment!
 
@@ -257,6 +257,7 @@ Here's the breakdown of the command:
 | `--prefix *_tree` | Sets the output file prefix. |
 
 </br>
+
 Copy over the tree file to our local machine:
 ```bash
 scp <user>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tree/*.treefile .
