@@ -236,7 +236,7 @@ module load trimAl
 trimal -in selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag.fasta -out selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag_trimmed.fasta -automated1
 ```
 
-Have a look at the alignment again! Did that work? Are we happy with the alignment as it is?
+- Have a look at the alignment again! Did that work? Are we happy with the alignment as it is?
 
 </br>
 
