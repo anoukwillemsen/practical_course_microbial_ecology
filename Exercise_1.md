@@ -135,11 +135,11 @@ Copy the necessary files into your `<USER>/18S_analysis/data` directory
 
 ```bash
 # Copy the DNA consensus file you made
-scp DNA_consensus.fasta <USER>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/data/;
+scp DNA_consensus_18S.fasta <USER>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/data/;
 ```
 ### Copy the provided alignment
 ```bash
-scp ../../provided_data/selected_Discosea_genafpairAln_manCur.fasta data/;
+scp ../../provided_data/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln.fasta data/;
 ```
 </details>
 
@@ -155,7 +155,7 @@ pwd
 Output should show `/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/`.
 
 ```bash
-less data/DNA_consensus.fasta;
+less data/DNA_consensus_18S.fasta;
 ```
 - Click <kbd>↑</kbd> and <kbd>↓</kbd> to navigate through the file visualisation.
 
@@ -165,7 +165,7 @@ less data/DNA_consensus.fasta;
 
 <summary>See output</summary>
 
-![](./figures/Screenshot_5_2026-06-30_14-46-03.png)
+![](./figures/DNA_consensus_18S.png)
 
 </details>
 </br>
@@ -179,7 +179,7 @@ less data/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln.fasta
 
 <summary>See output</summary>
 
-![](./figures/Screenshot_6_2026-06-30_14-46-20.png)
+![](./figures/backbone_alignment_Discosea.png)
 
 </details>
 </br>
