@@ -219,9 +219,24 @@ Here are the download links for three different operating systems.
 
 But then we need to copy over the files to our local machine:
 ```bash
-scp <user>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tree/selected_Discosea_genafpairAln_manCur_addFrag.fasta .
+scp <user>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tree/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag.fasta .
 ```
 Have a look at the alignment!
+
+</br>
+
+Trim alignment
+As you've seen, there are overhangs and big gaps, which create noise in our alignment and, therefore, in the tree. Note that this step needs careful consideration; in some cases keeping overhangs/gaps is fine and actually the _correct_ way. 
+
+For now, let's trim. We are going to use `trimal` for that. 
+
+```
+module load trimAl
+
+trimal -in selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag.fasta -out selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag_trimmed.fasta -automated1
+```
+
+Have a look at the alignment again! Did that work? Are we happy with the alignment as it is?
 
 </br>
 
