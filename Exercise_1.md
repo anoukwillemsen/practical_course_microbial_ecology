@@ -113,7 +113,7 @@ mkdir 18S_analysis
 cd 18S_analysis
 ```
 
-# Make directories inside of ~/2026s301485/18S_analysis
+**Make directories inside of ~/2026s301485/18S_analysis**
 ```bash
 mkdir data
 mkdir processed_data
@@ -122,7 +122,7 @@ mkdir tmp
 mkdir tree
 ```
 
-# Visualise your directory structure
+### Visualise your directory structure
 ```bash
 tree .
 ```
@@ -137,7 +137,7 @@ Copy the necessary files into your `<USER>/18S_analysis/data` directory
 # Copy the DNA consensus file you made
 scp DNA_consensus.fasta <USER>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/data/;
 ```
-# Copy the provided alignment
+### Copy the provided alignment
 ```bash
 scp ../../provided_data/selected_Discosea_genafpairAln_manCur.fasta data/;
 ```
@@ -194,22 +194,22 @@ grep -c ">" ../data/*.fasta
 ### Add your sequence to an existing alignment
 We know from our BLAST analysis that our organism is most likely a member of the family *Anthamoeba* within the phylum *Discosea*. Since we have only a partial 18S rRNA sequence, we will add our DNA fragment to an existing alignment of *Discosea* from the supplementary data of Willemsen *et al.*(2025). doi: [10.1093/gbe/evae271](https://doi.org/10.1093/gbe/evae271). We will align our DNA sequence using [MAFFT](https://mafft.cbrc.jp/alignment/software/).
 
-**Change to the tree directory**
+Change to the tree directory
 ```bash
 cd tree
 ```
 
-**Let's first load our alignment software**.
+Let's first load our alignment software.
 ```bash
 module load MAFFT
 ```
-**Now add our DNA sequence to the existing alignment**
+Now add our DNA sequence to the existing alignment
 ```bash
 mafft --auto --addfragments ../data/DNA_consensus.fasta --thread 2 ../data/selected_Discosea_genafpairAln_manCur.fasta > selected_Discosea_genafpairAln_manCur_addFrag.fasta
 ```
 </br>
 
-**View alignment**
+View alignment
 Let's take a look at our alignment using [Aliview](https://github.com/AliView/AliView), a lightweight alignment viewer/editor.
 
 Here are the download links for three different operating systems.
@@ -222,6 +222,7 @@ But then we need to copy over the files to our local machine:
 scp <user>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tmp/selected_Discosea_genafpairAln_manCur_addFrag.fasta .
 ```
 Have a look at the alignment!
+
 </br>
 
 ### Phylogenetic tree calculation
@@ -248,12 +249,18 @@ Here's the breakdown of the command:
 
 | Parameter | Description |
 |-----------|-------------|
-| `-s alignment.fasta` | PHYLIP/FASTA/NEXUS/CLUSTAL/MSF alignment file(s). |
+| `-s alignment.fasta` | Your input alignment file(s). |
 | `-seed NUM` | Random seed number, normally used for debugging purposes. |
 | `-B 1000` | Performs **1,000 ultrafast bootstrap replicates** to assess branch support quickly and accurately. |
 | `-v` | Verbose mode, printing more messages to screen. |
 | `-T 2` | Uses **2 threads** for parallel computation. |
 | `--prefix *_tree` | Sets the output file prefix. |
+
+</br>
+Copy over the tree file to our local machine:
+```bash
+scp <user>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tree/*.treefile .
+```
 
 </br>
 
@@ -273,10 +280,10 @@ Then go create your own workspace.
 </p>
 
 Then try to do these steps, but also feel free to just play around:
-- **upload** your tree files (literally `<something>.treefile`), which are saved in Newick format.
-- Have a look at the tree **layouts**
-- Have a look at midpoint **rooting**
-- Have a look at bootstrap **support** values
+- **Upload** your tree files (`<something>.treefile`), which are saved in Newick format.
+- Have a look at the tree **layouts**.
+- Have a look at midpoint **rooting**.
+- Have a look at bootstrap **support** values.
 - Where does your sequence cluster?
 - Can you say with certainty what host species/strain you have?
 
