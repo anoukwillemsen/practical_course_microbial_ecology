@@ -93,7 +93,7 @@ cd  <USER>
 ```   
 </details>
 
-Once in that directory, we will create the directory structure so we can work in a nice environment 😉.
+Once in that directory, we will create the directory structure to work in a nice environment 😉.
 ```bash
 <USER>
 └── 18S_analysis
@@ -221,7 +221,20 @@ But then we need to copy over the files to our local machine:
 ```bash
 scp <user>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tree/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag.fasta .
 ```
+
+</br>
+
 Have a look at the alignment!
+
+</br>
+
+<details>
+
+<summary>See output</summary>
+
+![](./figures/alignment_before_trimming.png)
+
+</details>
 
 </br>
 
@@ -236,7 +249,19 @@ module load trimAl
 trimal -in selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag.fasta -out selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag_trimmed.fasta -automated1
 ```
 
+</br>
+
 - Have a look at the alignment again! Did that work? Are we happy with the alignment as it is?
+
+</br>
+
+<details>
+
+<summary>See output</summary>
+
+![](./figures/alignment_after_trimming.png)
+
+</details>
 
 </br>
 
