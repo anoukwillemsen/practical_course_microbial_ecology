@@ -311,7 +311,7 @@ Here's the breakdown of the command:
 
 </br>
 
-Copy over the tree file to our local machine:
+Copy over the tree files to our local machine:
 ```bash
 scp <user>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tree/*.treefile .
 ```
@@ -340,5 +340,6 @@ Then try to do these steps, but also feel free to just play around:
 - Have a look at bootstrap **support** values.
 - Where does your sequence cluster?
 - Can you say with certainty what host species/strain you have?
+- Do you see any differences between the trees generated with the trimmed and untrimmed alignment?
 
 <br>
