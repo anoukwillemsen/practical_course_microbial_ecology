@@ -277,12 +277,13 @@ These are the commands we will be running, which take ~10 min. So grab a coffee 
 module load IQ-TREE
 ```
 ```bash
-iqtree3 -s selected_Discosea_genafpairAln_manCur_addFrag.fasta \
--seed 145693 \
+iqtree3 -s selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag_trimmed.fasta \
+-m GTR+F+G4 \
 -B 1000 \
+-alrt 1000 \
 -v \
--T 2 \
---prefix selected_Discosea_genafpairAln_manCur_addFrag_tree
+-T 4 \
+--prefix selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag_trimmed_tree
 ```
 
 Here's the breakdown of the command:
@@ -290,10 +291,11 @@ Here's the breakdown of the command:
 | Parameter | Description |
 |-----------|-------------|
 | `-s alignment.fasta` | Your input alignment file(s). |
-| `-seed NUM` | Random seed number, normally used for debugging purposes. |
+| `-m GTR+F+G4` | Sets the substitution model to **GTR** (General Time Reversible) for nucleotides; **F** (Empirical Base Frequencies) directs the software to count and use the actual, observed base frequencies directly from the sequence alignment rather than assuming all four bases are exactly equal; **G4** (Discrete Gamma Distribution) accounts for rate heterogeneity across different sites in the sequence (the "4" refers to 4 discrete rate categories). **G4** models the biological reality that some parts of a gene mutate very slowly (highly conserved) while others mutate rapidly, following a gamma distribution. |
 | `-B 1000` | Performs **1,000 ultrafast bootstrap replicates** to assess branch support quickly and accurately. |
+| `-alrt 1000` | Performs **1,000 SH-aLRT tests** for complementary branch support statistics. |
 | `-v` | Verbose mode, printing more messages to screen. |
-| `-T 2` | Uses **2 threads** for parallel computation. |
+| `-T 4` | Uses **4 threads** for parallel computation. |
 | `--prefix *_tree` | Sets the output file prefix. |
 
 </br>
