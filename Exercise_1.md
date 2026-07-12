@@ -290,7 +290,7 @@ Here's the breakdown of the command:
 
 | Parameter | Description |
 |-----------|-------------|
-| `-s alignment.fasta` | Your input alignment file(s). |
+| `-s *.fasta` | Your input alignment file(s). |
 | `-m GTR+F+G4` | Sets the substitution model to **GTR** (General Time Reversible) for nucleotides; **F** (Empirical Base Frequencies) directs the software to count and use the actual, observed base frequencies directly from the sequence alignment rather than assuming all four bases are exactly equal; **G4** (Discrete Gamma Distribution) accounts for rate heterogeneity across different sites in the sequence (the "4" refers to 4 discrete rate categories). **G4** models the biological reality that some parts of a gene mutate very slowly (highly conserved) while others mutate rapidly, following a gamma distribution. |
 | `-B 1000` | Performs **1,000 ultrafast bootstrap replicates** to assess branch support quickly and accurately. |
 | `-alrt 1000` | Performs **1,000 SH-aLRT tests** for complementary branch support statistics. |
