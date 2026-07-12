@@ -139,7 +139,7 @@ scp DNA_consensus_18S.fasta <USER>@login01.lisc.univie.ac.at:/lisc/data/scratch/
 ```
 ### Copy the provided alignment
 ```bash
-scp ../../provided_data/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln.fasta data/;
+scp ../../provided_data/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead.fasta data/;
 ```
 </details>
 
@@ -172,7 +172,7 @@ less data/DNA_consensus_18S.fasta;
 
 
 ```bash
-less data/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln.fasta
+less data/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead.fasta
 ```
 
 <details>
@@ -205,7 +205,7 @@ module load MAFFT
 ```
 Now add our DNA sequence to the existing alignment
 ```bash
-mafft --auto --addfragments ../data/DNA_consensus_18S.fasta --thread 2 ../data/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln.fasta > selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag.fasta
+mafft --auto --addfragments ../data/DNA_consensus_18S.fasta --thread 2 ../data/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead.fasta > selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead_addFrag.fasta
 ```
 </br>
 
@@ -219,7 +219,7 @@ Here are the download links for three different operating systems.
 
 But then we need to copy over the files to our local machine:
 ```bash
-scp <user>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tree/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag.fasta .
+scp <user>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/tree/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead_addFrag.fasta .
 ```
 
 </br>
@@ -239,14 +239,15 @@ Have a look at the alignment!
 </br>
 
 Trim alignment
-As you've seen, there are overhangs and big gaps, which create noise in our alignment and, therefore, in the tree. Note that this step needs careful consideration; in some cases keeping overhangs/gaps is fine and actually the _correct_ way. 
+As you've seen, there are overhangs and large gaps that create noise in our alignment and, therefore, in the tree. Note that this step needs careful consideration; in some cases keeping overhangs/gaps is fine and actually the _correct_ way. 
 
 For now, let's trim. We are going to use `trimal` for that. 
 
-```
+```bash
 module load trimAl
-
-trimal -in selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag.fasta -out selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag_trimmed.fasta -automated1
+```
+```bash
+trimal -in selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead_addFrag.fasta -out selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead_addFrag_trimmed.fasta -automated1
 ```
 
 </br>
@@ -278,23 +279,24 @@ module load IQ-TREE
 ```
 ```bash
 # run tree for trimmed alignment
-iqtree3 -s selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag_trimmed.fasta \
+iqtree3 -s selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead_addFrag_trimmed.fasta \
 -m GTR+F+G4 \
 -B 1000 \
 -alrt 1000 \
 -v \
 -T 4 \
---prefix selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag_trimmed_tree
+--prefix selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead_addFrag_trimmed_tree
 ```
+
 ```bash
 # run tree for untrimmed alignment
-iqtree3 -s selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag.fasta \
+iqtree3 -s selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead_addFrag.fasta 
 -m GTR+F+G4 \
 -B 1000 \
 -alrt 1000 \
 -v \
 -T 4 \
---prefix selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag_tree
+--prefix selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead_addFrag_tree
 ```
 
 Here's the breakdown of the command:
