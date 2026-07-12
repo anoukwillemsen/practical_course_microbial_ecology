@@ -277,6 +277,7 @@ These are the commands we will be running, which take ~10 min. So grab a coffee 
 module load IQ-TREE
 ```
 ```bash
+# run tree for trimmed alignment
 iqtree3 -s selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag_trimmed.fasta \
 -m GTR+F+G4 \
 -B 1000 \
@@ -284,6 +285,16 @@ iqtree3 -s selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFra
 -v \
 -T 4 \
 --prefix selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag_trimmed_tree
+```
+```bash
+# run tree for untrimmed alignment
+iqtree3 -s selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag.fasta \
+-m GTR+F+G4 \
+-B 1000 \
+-alrt 1000 \
+-v \
+-T 4 \
+--prefix selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_addFrag_tree
 ```
 
 Here's the breakdown of the command:
