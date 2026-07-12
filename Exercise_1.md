@@ -33,11 +33,11 @@ In this exercise, we will create a consensus sequence from multiple Sanger seque
 ## Find out the organism through BLAST
 
 1. First, inspect your consensus sequence (FASTA file) in a text editor
-2. Perform blast-based searches using reference databases. You can do this online: https://blast.ncbi.nlm.nih.gov/Blast.cgi
+2. Perform BLAST-based searches using reference databases. You can do this online: https://blast.ncbi.nlm.nih.gov/Blast.cgi
 
 **Questions**:</br>
 `Which type of BLAST did you use, and why?`</br>
-`What are the criteria of a good blast hit?`</br>
+`What are the criteria of a good BLAST hit?`</br>
 `Which organism gave the best hit?`</br>
 
 <details>
@@ -338,8 +338,10 @@ Then try to do these steps, but also feel free to just play around:
 - Have a look at the tree **layouts**.
 - Have a look at midpoint **rooting**.
 - Have a look at bootstrap **support** values.
-- Where does your sequence cluster?
-- Can you say with certainty what host species/strain you have?
-- Do you see any differences between the trees generated with the trimmed and untrimmed alignment?
+
+  **Questions**:</br>
+`Where does your sequence cluster?`</br>
+`Do you see any differences between the trees generated with the trimmed and untrimmed alignment?`</br>
+`Can you say with certainty what host species/strain you have?`</br>
 
 <br>
