@@ -290,7 +290,7 @@ iqtree3 -s selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHea
 
 ```bash
 # run tree for untrimmed alignment
-iqtree3 -s selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead_addFrag.fasta 
+iqtree3 -s selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead_addFrag.fasta \
 -m GTR+F+G4 \
 -B 1000 \
 -alrt 1000 \
