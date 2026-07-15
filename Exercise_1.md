@@ -128,20 +128,17 @@ tree .
 ```
 </details>
 
-Copy the necessary files into your `<USER>/18S_analysis/data` directory
-
-<details>
-<summary>See commands</summary>
+## Copy the necessary files into your `<USER>/18S_analysis/data` directory
 
 ```bash
-# Copy the DNA consensus file you made
-scp DNA_consensus_18S.fasta <USER>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/data/;
+# Copy the DNA consensus file that corresponds to the host organism we worked with during the course
+scp /lisc/data/scratch/course/2026s301485/provided_data/DNA_consensus_18S.fasta /lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/data/;
 ```
-### Copy the provided alignment
+
 ```bash
-scp ../../provided_data/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead.fasta data/;
+# Copy the provided alignment
+scp /lisc/data/scratch/course/2026s301485/provided_data/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead.fasta /lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/data/;
 ```
-</details>
 
 </br>
 
@@ -205,7 +202,7 @@ module load MAFFT
 ```
 Now add our DNA sequence to the existing alignment
 ```bash
-mafft --auto --addfragments ../data/DNA_consensus_18S.fasta --thread 2 ../data/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead.fasta > selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead_addFrag.fasta
+mafft --auto --addfragments /lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/data/DNA_consensus_18S.fasta --thread 2 /lisc/data/scratch/course/2026s301485/<USER>/18S_analysis/data/selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead.fasta > selected_phylum_Discosea_REFsAcanthamoeba_reduced_genafpairAln_newHead_addFrag.fasta
 ```
 </br>
 
@@ -213,9 +210,9 @@ View alignment
 Let's take a look at our alignment using [Aliview](https://github.com/AliView/AliView), a lightweight alignment viewer/editor.
 
 Here are the download links for three different operating systems.
-- Windows - http://www.ormbunkar.se/aliview/downloads/linux
+- Windows - http://www.ormbunkar.se/aliview/downloads/windows
 - OsX - http://www.ormbunkar.se/aliview/downloads/mac
-- Linux - http://www.ormbunkar.se/aliview/downloads/windows
+- Linux - http://www.ormbunkar.se/aliview/downloads/linux
 
 But then we need to copy over the files to our local machine:
 ```bash
