@@ -26,4 +26,5 @@ VEElab link: https://veelab.univie.ac.at/
 
 ## Exercises
 [Exercise_1: Analyse 18S sequencing data](Exercise_1.md)
+
 [Exercise_2: Analyse digital PCR data](Exercise_2.md)
