@@ -29,7 +29,18 @@ mkdir plots
 ```
 </details>
 
+Copy the digital PCR data (output.csv) file to your ~/2026s301485/dPCR_analysis/data folder on LiSC.
+<details>  
+<summary>See commands</summary>
+  
+```bash
+scp example_datas.csv <USER>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/dPCR_analysis/data
+```
 
+</details>
+
+
+### Log in to the RStudio server and have fun
 We will be using the RStudio Server hosted by LiSC at [https://rstudio.lisc.univie.ac.at](https://rstudio.lisc.univie.ac.at).
 The login credentials for the RStudio Server are the same as those for logging in to the LiSC login nodes. Make sure your network address has LiSC access.
 If you have R or RStudio installed locally, you can, of course, also use them. 
