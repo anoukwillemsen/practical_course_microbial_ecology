@@ -34,7 +34,7 @@ Copy the digital PCR data (output.csv) file to your ~/2026s301485/dPCR_analysis/
 <summary>See commands</summary>
   
 ```bash
-scp example_datas.csv <USER>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/dPCR_analysis/data
+scp output.csv <USER>@login01.lisc.univie.ac.at:/lisc/data/scratch/course/2026s301485/<USER>/dPCR_analysis/data
 ```
 
 </details>
