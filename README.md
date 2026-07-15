@@ -24,5 +24,5 @@ Linux Commands Cheat Sheet: https://www.geeksforgeeks.org/linux-unix/linux-comma
 VEElab link: https://veelab.univie.ac.at/
 
 
-## 2 Blocks of Exercises
+## Exercises
 [Exercise_1: Analyse 18S sequencing data](Exercise_1.md)
